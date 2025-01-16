@@ -13,3 +13,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResource('sites', SiteController::class)->only(['index', 'show']);
 Route::apiResource('sites.characteristics', CharacteristicController::class)->only(['index', 'show']);
+Route::get('/test', function () {
+   CollectSitesFromNDWJob::dispatch();
+});
